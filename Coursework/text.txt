@@ -1,0 +1,9 @@
+select books.book, books.creature, author.author, book_rating.rating, description.description from author, books, description, book_rating where books.book = author.book and books.book = book_rating.book and books.book = description.book;
+
+select books.book, books.creature, author.author, book_rating.rating from author, books, book_rating where books.book = author.book and books.book = book_rating.book;
+
+select books.book, book_rating.rating from books, book_rating where books.book = book_rating.book;
+
+select books.book, author.author from author, books where books.book = author.book;
+
+select books.book, description.description from description, books where books.book = description.book;
