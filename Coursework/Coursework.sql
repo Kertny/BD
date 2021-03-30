@@ -112,6 +112,18 @@ CREATE TABLE public.regions (
 ALTER TABLE public.regions OWNER TO postgres;
 
 --
+-- Name: regions_description; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.regions_description (
+    regions_dev text NOT NULL,
+    regions_description text
+);
+
+
+ALTER TABLE public.regions_description OWNER TO postgres;
+
+--
 -- Data for Name: author; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -978,11 +990,38 @@ JavaScript для детей	webdev
 
 
 --
+-- Data for Name: regions_description; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.regions_description (regions_dev, regions_description) FROM stdin;
+algorithms	Книги о алгоритмах и какие из них применяются в программировании
+software	Книги о разработке ПО и его использования
+webdev	Веб программирование и все что с ним связано
+bigdata	Наука о больших данных
+datascience	Наука, изучающая проблемы анализа, обработку и представление данных в цифровой форме
+operatingsystem	Книги о операционных системах
+hackers	Книги о программном обеспеченье и методов хакеров
+network	Книги о сетя
+gamedev	Книги о игровой индустрии и разработке игр
+fordummies	Книги для чайников
+develop	Книги для разработчиков приложений
+\.
+
+
+--
 -- Name: books books_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.books
     ADD CONSTRAINT books_pkey PRIMARY KEY (book);
+
+
+--
+-- Name: regions_description regions_description_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.regions_description
+    ADD CONSTRAINT regions_description_pkey PRIMARY KEY (regions_dev);
 
 
 --
